@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zieg's Piece Of Advice</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                  url("malupiton.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 25px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* BUTTON */
+    button {
+      padding: 12px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: white;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    /* GRID */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 240px);
+      gap: 18px;
+    }
+
+    /* VIDEO SIZE (LARGER + CLEAN) */
+    video {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 0 18px rgba(255,255,255,0.25);
+      transition: transform 0.2s ease;
+    }
+
+    video:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- UNMUTE BUTTON -->
+  <button onclick="unmuteAll()">🔊 Click to get motivated</button>
+
+  <!-- GRID -->
+  <div class="video-grid">
+
+    <video autoplay loop muted playsinline>
+      <source src="video/one.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay loop muted playsinline>
+      <source src="video/two.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay loop muted playsinline>
+      <source src="video/three.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay loop muted playsinline>
+      <source src="video/four.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <script>
+    function unmuteAll() {
+      const videos = document.querySelectorAll("video");
+
+      videos.forEach(video => {
+        video.muted = false;
+        video.play();
+      });
+    }
+  </script>
+
+</body>
+</html>

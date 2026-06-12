@@ -1,0 +1,11 @@
+.one {
+     margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center;
+}
+
+body {
+    background-image: url(malupiton.jpg);
+}
